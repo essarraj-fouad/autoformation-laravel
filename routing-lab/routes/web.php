@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route par défaut
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/bonjour', function () {
+    return 'Bonjour ESSARRAJ Fouad';
+});
+
+
+Route::get('/', [HomeController::class, 'index']);
+
+
+Route::get('/produit/{id}', function ($id) {
+    return 'Affichage du produit numéro '.$id;
+});
+
+Route::get('/produit/{param1}/commentaire/{param2}', function ($produitId, $commentaireId) {
+    return 'Le produit numéro '.$produitId. 'avec la commentaire numéro '.$commentaireId;
 });
