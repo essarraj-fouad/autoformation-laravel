@@ -15,3 +15,7 @@
 ## Seed 
 
 - php artisan make:seeder PostSeeder
+
+Puis créer un lien symbolique /public/storage/ connecté à /storage/app/public/ en exécutant la commande
+
+- php artisan storage:link
